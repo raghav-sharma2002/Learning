@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CausalEdge™ Market Intelligence Terminal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+
+    <header class="terminal-header">
+      <div>
+        <div class="terminal-subtitle">PyWhy · EconML · DoWhy · Difference-in-Differences</div>
+        <h1 class="terminal-title">CausalEdge™ Market Intelligence</h1>
+      </div>
+      <div class="terminal-status">
+        <div>Causal AI Engine v2.1</div>
+        <div class="status-live">● Live</div>
+      </div>
+    </header>
+
+    <div id="event-tabs" class="event-tabs"></div>
+
+    <div id="metrics" class="metrics-grid"></div>
+
+    <div class="chart-tab-bar">
+      <button class="chart-tab active" id="tab-timeline" onclick="switchTab('timeline')">Timeline</button>
+      <button class="chart-tab" id="tab-factors" onclick="switchTab('factors')">Causal factors</button>
+      <button class="chart-tab" id="tab-sectors" onclick="switchTab('sectors')">Sectors</button>
+    </div>
+
+    <div id="chart-area" class="chart-area"></div>
+
+    <div class="confounders-box">
+      <div class="confounders-label">Confounders controlled via DoWhy causal DAG</div>
+      <div id="confounders-list" class="confounders-list"></div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="analysis-header">
+        <span class="analysis-title">Causal narrative — powered by Claude AI</span>
+        <button id="run-btn" onclick="runAnalysis()">Run causal analysis ↗</button>
+      </div>
+      <div id="analysis-area" class="analysis-area">
+        <div class="analysis-placeholder">Select an event above, then run causal analysis to generate a quant-grade narrative using Claude AI.</div>
+      </div>
+    </div>
+
+    <footer class="terminal-footer">
+      Causal estimates via EconML heterogeneous treatment effects · Counterfactuals via DoWhy synthetic control · Illustrative data for demonstration purposes
+    </footer>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+  <script src="data.js"></script>
+  <script src="charts.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
